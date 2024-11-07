@@ -2,6 +2,8 @@
 #include "mbed.h"
 #include <cstdint>
 
+#define ONES_DATA_LEN 7
+
 class Dual_Seven_Seg{
     protected:
         BusOut arrayBus;
