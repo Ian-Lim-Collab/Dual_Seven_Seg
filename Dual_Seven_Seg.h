@@ -18,7 +18,7 @@ class Dual_Seven_Seg{
         const uint8_t SEVEN_SEG_NULL_DATA   = 0b01111111;
 
         enum Dual_Seven_Seg_Error{
-            kDualSevenSegOk            =
+            kDualSevenSegOk            = 0,
             kDualSevenSegOutOfRangeErr = -100
         };
 
