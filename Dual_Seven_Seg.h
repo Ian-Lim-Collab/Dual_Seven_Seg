@@ -17,15 +17,16 @@ class Dual_Seven_Seg{
         const uint8_t SEVEN_SEG_9_DATA      = 0b00010000;
         const uint8_t SEVEN_SEG_NULL_DATA   = 0b01111111;
 
+        uint8_t tenths_data = SEVEN_SEG_NULL_DATA;
+        uint8_t ones_data   = SEVEN_SEG_NULL_DATA;
+        uint16_t combined_data = (1 << 16) - 1; // initalise to all ones, display off by default
+    public: 
+
         enum Dual_Seven_Seg_Error{
             kDualSevenSegOk            = 0,
             kDualSevenSegOutOfRangeErr = -100
         };
 
-        uint8_t tenths_data = SEVEN_SEG_NULL_DATA;
-        uint8_t ones_data   = SEVEN_SEG_NULL_DATA;
-        uint16_t combined_data = (1 << 16) - 1; // initalise to all ones, display off by default
-    public: 
         Dual_Seven_Seg(  PinName Seven_seg_1, 
                     PinName Seven_seg_2,
                     PinName Seven_seg_3,
