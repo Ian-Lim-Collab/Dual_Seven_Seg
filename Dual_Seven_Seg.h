@@ -2,7 +2,7 @@
 #include "mbed.h"
 #include <cstdint>
 
-#define ONES_DATA_LEN 7
+#define ONES_DATA_LEN 8
 
 class Dual_Seven_Seg{
     protected:
@@ -29,7 +29,8 @@ class Dual_Seven_Seg{
             kDualSevenSegOutOfRangeErr = -100
         };
 
-        Dual_Seven_Seg(  PinName Seven_seg_1, 
+        Dual_Seven_Seg(  
+                    PinName Seven_seg_1, 
                     PinName Seven_seg_2,
                     PinName Seven_seg_3,
                     PinName Seven_seg_5,

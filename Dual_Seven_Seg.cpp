@@ -3,7 +3,7 @@
 //@param Seven_seg_1 - Corresponds to the pin 1 on the dual 7 Segment Display
 //@param Seven_seg_2 - Corresponds to the pin 2 on the dual 7 Segment Display
 Dual_Seven_Seg::Dual_Seven_Seg(   
-    PinName Seven_seg_1, 
+    PinName Seven_seg_1,
     PinName Seven_seg_2,
     PinName Seven_seg_3,
     PinName Seven_seg_5,
@@ -16,8 +16,8 @@ Dual_Seven_Seg::Dual_Seven_Seg(
     PinName Seven_seg_15,
     PinName Seven_seg_16,
     PinName Seven_seg_17,
-    PinName Seven_seg_18):
-    arrayBus(
+    PinName Seven_seg_18)
+    :arrayBus(
         Seven_seg_11,
         Seven_seg_12,
         Seven_seg_10,
@@ -25,6 +25,7 @@ Dual_Seven_Seg::Dual_Seven_Seg(
         Seven_seg_5,
         Seven_seg_8,
         Seven_seg_6,
+        NC,
         Seven_seg_16,
         Seven_seg_18,
         Seven_seg_15,
@@ -32,18 +33,17 @@ Dual_Seven_Seg::Dual_Seven_Seg(
         Seven_seg_1,
         Seven_seg_3,
         Seven_seg_2,
-    )
-    {
-        
-    };
+        NC
+    ){
+    arrayBus.write(this->combined_data);
+};
 
 Dual_Seven_Seg::~Dual_Seven_Seg(){
-    
-}
+};
 
 int Dual_Seven_Seg::write(uint8_t value){
     uint8_t tenths,ones;
-    if(value >= 99){
+    if(value > 99){
         return kDualSevenSegOutOfRangeErr;
     }
     tenths = value / 10;
@@ -113,9 +113,8 @@ int Dual_Seven_Seg::write(uint8_t value){
             ones_data = SEVEN_SEG_0_DATA;
     }
 
-    this -> combined_data = tenths << ONE_DATA_LEN | ones_data;
-
+    this -> combined_data = tenths_data << ONES_DATA_LEN | ones_data;
     arrayBus.write(combined_data);
     return kDualSevenSegOk;
-}
+};
 
