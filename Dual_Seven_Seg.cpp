@@ -1,7 +1,5 @@
 #include "Dual_Seven_Seg.h"
 
-//@param Seven_seg_1 - Corresponds to the pin 1 on the dual 7 Segment Display
-//@param Seven_seg_2 - Corresponds to the pin 2 on the dual 7 Segment Display
 Dual_Seven_Seg::Dual_Seven_Seg(   
     PinName Seven_seg_1,
     PinName Seven_seg_2,

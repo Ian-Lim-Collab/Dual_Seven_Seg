@@ -29,6 +29,19 @@ class Dual_Seven_Seg{
             kDualSevenSegOutOfRangeErr = -100
         };
 
+        //@param Seven_seg_1 - Corresponds to the pin 1 on the dual 7 Segment Display
+        //@param Seven_seg_2 - Corresponds to the pin 2 on the dual 7 Segment Display
+        //@param Seven_seg_3 - Corresponds to the pin 3 on the dual 7 Segment Display
+        //@param Seven_seg_5 - Corresponds to the pin 5 on the dual 7 Segment Display
+        //@param Seven_seg_6 - Corresponds to the pin 6 on the dual 7 Segment Display
+        //@param Seven_seg_7 - Corresponds to the pin 7 on the dual 7 Segment Display
+        //@param Seven_seg_8 - Corresponds to the pin 8 on the dual 7 Segment Display
+        //@param Seven_seg_10 - Corresponds to the pin 10 on the dual 7 Segment Display
+        //@param Seven_seg_11 - Corresponds to the pin 11 on the dual 7 Segment Display
+        //@param Seven_seg_12 - Corresponds to the pin 12 on the dual 7 Segment Display
+        //@param Seven_seg_15 - Corresponds to the pin 15 on the dual 7 Segment Display
+        //@param Seven_seg_16 - Corresponds to the pin 16 on the dual 7 Segment Display
+        //@param Seven_seg_17 - Corresponds to the pin 17 on the dual 7 Segment Display
         Dual_Seven_Seg(  
                     PinName Seven_seg_1, 
                     PinName Seven_seg_2,
@@ -48,5 +61,7 @@ class Dual_Seven_Seg{
         
         ~Dual_Seven_Seg();
 
+        //@param value - The value to be displayed on the dual 7 segment display
+        //@return - Returns kDualSevenSegOutOfRangeErr if the value is greater than 99, else returns kDualSevenSegOk
         int write(uint8_t value);
 };
