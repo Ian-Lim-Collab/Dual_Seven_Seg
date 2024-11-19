@@ -62,6 +62,6 @@ class Dual_Seven_Seg{
         ~Dual_Seven_Seg();
 
         //@param value - The value to be displayed on the dual 7 segment display
-        //@return - Returns kDualSevenSegOutOfRangeErr if the value is greater than 99, else returns kDualSevenSegOk
+        //@return - Returns kDualSevenSegOutOfRangeErr(-100) if the value is greater than 99, else returns kDualSevenSegOk(0)
         int write(uint8_t value);
 };
