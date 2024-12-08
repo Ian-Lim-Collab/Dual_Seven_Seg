@@ -116,3 +116,11 @@ int Dual_Seven_Seg::write(uint8_t value){
     return kDualSevenSegOk;
 };
 
+int Dual_Seven_Seg::clear(){
+    tenths_data = SEVEN_SEG_NULL_DATA;
+    ones_data   = SEVEN_SEG_NULL_DATA;
+    this -> combined_data = tenths_data << ONES_DATA_LEN | ones_data;
+    arrayBus.write(combined_data);
+    return kDualSevenSegOk;
+}
+
